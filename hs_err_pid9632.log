@@ -1,0 +1,238 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 65011712 bytes. Error detail: G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   This process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3603), pid=9632, tid=6748
+#
+# JRE version:  (21.0.3+9) (build )
+# Java VM: OpenJDK 64-Bit Server VM (21.0.3+9-LTS, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Dfile.encoding=UTF-8 -Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8 -XX:+ShowCodeDetailsInExceptionMessages MenuConsoleApplication
+
+Host: Intel(R) Pentium(R) Silver N5000 CPU @ 1.10GHz, 4 cores, 3G,  Windows 11 , 64 bit Build 22621 (10.0.22621.4391)
+Time: Sun Dec  8 20:48:34 2024 Malay Peninsula Standard Time elapsed time: 0.307817 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000002031e383710):  JavaThread "Unknown thread" [_thread_in_vm, id=6748, stack(0x000000f650800000,0x000000f650900000) (1024K)]
+
+Stack: [0x000000f650800000,0x000000f650900000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x6c8699]
+V  [jvm.dll+0x8a2061]
+V  [jvm.dll+0x8a458e]
+V  [jvm.dll+0x8a4c63]
+V  [jvm.dll+0x27e476]
+V  [jvm.dll+0x6c4e15]
+V  [jvm.dll+0x6b9b0a]
+V  [jvm.dll+0x3523ba]
+V  [jvm.dll+0x359f66]
+V  [jvm.dll+0x3ab1be]
+V  [jvm.dll+0x3ab468]
+V  [jvm.dll+0x3265fc]
+V  [jvm.dll+0x32715b]
+V  [jvm.dll+0x86b0b9]
+V  [jvm.dll+0x3b81c1]
+V  [jvm.dll+0x854318]
+V  [jvm.dll+0x44c55e]
+V  [jvm.dll+0x44e081]
+C  [jli.dll+0x5278]
+C  [ucrtbase.dll+0x29333]
+C  [KERNEL32.DLL+0x1259d]
+C  [ntdll.dll+0x5af38]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ffcb752e048, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+Total: 0
+
+Other Threads:
+  0x00000203204ee810 WorkerThread "GC Thread#0"                     [id=25816, stack(0x000000f650900000,0x000000f650a00000) (1024K)]
+  0x00000203204f7270 ConcurrentGCThread "G1 Main Marker"            [id=22096, stack(0x000000f650a00000,0x000000f650b00000) (1024K)]
+  0x00000203204f7d70 WorkerThread "G1 Conc#0"                       [id=45248, stack(0x000000f650b00000,0x000000f650c00000) (1024K)]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffcb6c38f27]
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00007ffcb75a2228] Heap_lock - owner thread: 0x000002031e383710
+
+Heap address: 0x00000000c2c00000, size: 980 MB, Compressed Oops mode: 32-bit
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 1.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+ CardTable entry size: 512
+ Card Set container configuration: InlinePtr #cards 5 size 8 Array Of Cards #cards 12 size 40 Howl #buckets 4 coarsen threshold 1843 Howl Bitmap #cards 512 size 80 coarsen threshold 460 Card regions per heap region 1 cards per card region 2048
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x00000000c2c00000, 0x0000000100000000)
+  region size 1024K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffcb7022069]
+GC Heap History (0 events):
+No events
+
+Dll operation events (1 events):
+Event: 0.253 Loaded shared library C:\Users\Romel L. Lasanas\Downloads\eclipse-java-2024-06-R-win32-x86_64\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.3.v20240426-1530\jre\bin\java.dll
+
+Deoptimization events (0 events):
+No events
+
+Classes loaded (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+ZGC Phase Switch (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff742e20000 - 0x00007ff742e2e000 	C:\Users\Romel L. Lasanas\Downloads\eclipse-java-2024-06-R-win32-x86_64\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.3.v20240426-1530\jre\bin\javaw.exe
+0x00007ffd2c150000 - 0x00007ffd2c367000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffd2a820000 - 0x00007ffd2a8e4000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ffd29660000 - 0x00007ffd29a19000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ffd29a20000 - 0x00007ffd29b31000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ffd16d80000 - 0x00007ffd16d98000 	C:\Users\Romel L. Lasanas\Downloads\eclipse-java-2024-06-R-win32-x86_64\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.3.v20240426-1530\jre\bin\jli.dll
+0x00007ffd2bbb0000 - 0x00007ffd2bd5e000 	C:\WINDOWS\System32\USER32.dll
+0x00007ffd29570000 - 0x00007ffd29596000 	C:\WINDOWS\System32\win32u.dll
+0x00007ffd2b840000 - 0x00007ffd2b869000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ffd29450000 - 0x00007ffd2956b000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ffd29b40000 - 0x00007ffd29bda000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ffd14c90000 - 0x00007ffd14cab000 	C:\Users\Romel L. Lasanas\Downloads\eclipse-java-2024-06-R-win32-x86_64\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.3.v20240426-1530\jre\bin\VCRUNTIME140.dll
+0x00007ffd285d0000 - 0x00007ffd28862000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.4391_none_2715d37f73803e96\COMCTL32.dll
+0x00007ffd2a5f0000 - 0x00007ffd2a697000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ffd2b9e0000 - 0x00007ffd2ba11000 	C:\WINDOWS\System32\IMM32.DLL
+0x000000006d610000 - 0x000000006d61c000 	C:\Program Files (x86)\360\Total Security\safemon\SafeWrapper.dll
+0x00007ffd29f80000 - 0x00007ffd2a032000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ffd2bd60000 - 0x00007ffd2be07000 	C:\WINDOWS\System32\sechost.dll
+0x00007ffd29e40000 - 0x00007ffd29e68000 	C:\WINDOWS\System32\bcrypt.dll
+0x00007ffd2b870000 - 0x00007ffd2b984000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ffcd9ee0000 - 0x00007ffcd9f8c000 	C:\Program Files (x86)\360\Total Security\safemon\libzdtp64.dll
+0x00007ffd2a970000 - 0x00007ffd2b1e6000 	C:\WINDOWS\System32\SHELL32.dll
+0x00007ffd2c0b0000 - 0x00007ffd2c10e000 	C:\WINDOWS\System32\SHLWAPI.dll
+0x00007ffd28c60000 - 0x00007ffd28c6a000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ffd23420000 - 0x00007ffd2342c000 	C:\Users\Romel L. Lasanas\Downloads\eclipse-java-2024-06-R-win32-x86_64\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.3.v20240426-1530\jre\bin\vcruntime140_1.dll
+0x00007ffd067d0000 - 0x00007ffd0685e000 	C:\Users\Romel L. Lasanas\Downloads\eclipse-java-2024-06-R-win32-x86_64\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.3.v20240426-1530\jre\bin\msvcp140.dll
+0x00007ffcb6900000 - 0x00007ffcb7682000 	C:\Users\Romel L. Lasanas\Downloads\eclipse-java-2024-06-R-win32-x86_64\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.3.v20240426-1530\jre\bin\server\jvm.dll
+0x00007ffd2a040000 - 0x00007ffd2a0b1000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ffd29220000 - 0x00007ffd2926d000 	C:\WINDOWS\SYSTEM32\POWRPROF.dll
+0x00007ffd22670000 - 0x00007ffd226a4000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffd29100000 - 0x00007ffd29113000 	C:\WINDOWS\SYSTEM32\UMPDC.dll
+0x00007ffd274f0000 - 0x00007ffd27508000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ffcfe1a0000 - 0x00007ffcfe1aa000 	C:\Users\Romel L. Lasanas\Downloads\eclipse-java-2024-06-R-win32-x86_64\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.3.v20240426-1530\jre\bin\jimage.dll
+0x00007ffd28c70000 - 0x00007ffd28ea2000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ffd2b200000 - 0x00007ffd2b58f000 	C:\WINDOWS\System32\combase.dll
+0x00007ffd2bfd0000 - 0x00007ffd2c0a7000 	C:\WINDOWS\System32\OLEAUT32.dll
+0x00007ffd28b40000 - 0x00007ffd28b72000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ffd29be0000 - 0x00007ffd29c5b000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ffcf6cd0000 - 0x00007ffcf6cef000 	C:\Users\Romel L. Lasanas\Downloads\eclipse-java-2024-06-R-win32-x86_64\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.3.v20240426-1530\jre\bin\java.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Users\Romel L. Lasanas\Downloads\eclipse-java-2024-06-R-win32-x86_64\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.3.v20240426-1530\jre\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.4391_none_2715d37f73803e96;C:\Program Files (x86)\360\Total Security\safemon;C:\Users\Romel L. Lasanas\Downloads\eclipse-java-2024-06-R-win32-x86_64\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.3.v20240426-1530\jre\bin\server
+
+VM Arguments:
+jvm_args: -Dfile.encoding=UTF-8 -Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8 -XX:+ShowCodeDetailsInExceptionMessages 
+java_command: MenuConsoleApplication
+java_class_path (initial): C:\Users\Romel L. Lasanas\eclipse-workspace\MenuConsoleApplication-_-\bin
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 3                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 1                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 4                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 65011712                                  {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 1027604480                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5832780                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122912730                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122912730                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+     bool ShowCodeDetailsInExceptionMessages       = true                                   {manageable} {command line}
+   size_t SoftMaxHeapSize                          = 1027604480                             {manageable} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags foldmultilines=false
+ #1: stderr all=off uptime,level,tags foldmultilines=false
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk-22
+PATH=C:/Users/Romel L. Lasanas/Downloads/eclipse-java-2024-06-R-win32-x86_64/eclipse//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.3.v20240426-1530/jre/bin/server;C:/Users/Romel L. Lasanas/Downloads/eclipse-java-2024-06-R-win32-x86_64/eclipse//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.3.v20240426-1530/jre/bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Users\Romel L. Lasanas\AppData\Local\Programs\Python\Launcher\;C:\Users\Romel L. Lasanas\AppData\Local\Microsoft\WindowsApps;;C:\Users\Romel L. Lasanas\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\PyCharm Community Edition 2023.3.4\bin;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2024.3\bin;;C:\Users\Romel L. Lasanas\Downloads\eclipse-java-2024-06-R-win32-x86_64\eclipse;
+USERNAME=Romel L. Lasanas
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 122 Stepping 1, GenuineIntel
+TMP=C:\Users\ROMELL~1.LAS\AppData\Local\Temp
+TEMP=C:\Users\ROMELL~1.LAS\AppData\Local\Temp
+
+
+
+
+Periodic native trim disabled
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 11 , 64 bit Build 22621 (10.0.22621.4391)
+OS uptime: 10 days 8:22 hours
+
+CPU: total 4 (initial active 4) (4 cores per cpu, 1 threads per core) family 6 model 122 stepping 1 microcode 0x34, cx8, cmov, fxsr, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, tsc, tscinvbit, aes, erms, clmul, sha, clflush, clflushopt, rdtscp, rdpid
+Processor Information for all 4 processors :
+  Max Mhz: 1101, Current Mhz: 1101, Mhz Limit: 1101
+
+Memory: 4k page, system-wide physical 3918M (216M free)
+TotalPageFile size 15694M (AvailPageFile size 34M)
+current process WorkingSet (physical memory assigned to process): 12M, peak: 12M
+current process commit charge ("private bytes"): 52M, peak: 113M
+
+vm_info: OpenJDK 64-Bit Server VM (21.0.3+9-LTS) for windows-amd64 JRE (21.0.3+9-LTS), built on 2024-04-16T00:00:00Z by "admin" with MS VC++ 17.7 (VS2022)
+
+END.
